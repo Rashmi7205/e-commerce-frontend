@@ -1,5 +1,4 @@
 
-```markdown
 # E-Commerce Frontend
 
 Welcome to the E-Commerce Frontend repository! This project is the frontend part of an e-commerce application.
