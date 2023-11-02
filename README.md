@@ -73,7 +73,4 @@ The project follows a standard file structure:
 
 The app should now be running locally at `http://localhost:5173/`.
 
-Feel free to explore and modify the code to suit your needs. Happy coding!
-```
-
-Make sure to update the live site URL and any other relevant information specific to your project.
+Feel free to explore and modify the code to suit your needs. Happy coding❤️.
