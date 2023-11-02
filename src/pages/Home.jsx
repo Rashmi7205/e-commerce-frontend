@@ -2,7 +2,6 @@ import React,{useEffect} from 'react'
 import Navbar from '../Components/NavBar'
 import Slider from '../Components/Slider';
 import ProductList from '../Components/ProductList';
-import {products} from '../constants';
 import Title from '../Components/Title';
 import styled from 'styled-components';
 import Card from '../Components/Card';
@@ -26,7 +25,7 @@ function Home() {
   return (
     <Conatainer>
      <Slider/>
-     <ProductList products={products} listTitle={'Flash Sale'} buttonTitle={'View All Products'}/>
+     <ProductList listTitle={'Flash Sale'} buttonTitle={'View All Products'}/>
      <div className='catagory'>
         <Title title={'Catagories'}/>
         <h1>Browse By Catagory</h1>
