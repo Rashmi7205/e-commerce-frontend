@@ -1,10 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
-  min-height: 100%;
-  background: #fff;
+  min-height: 100vh;
+  background: #cce3de;
   color: #000;
   font-family: 'Poppins', sans-serif;
 }
@@ -109,4 +113,42 @@ input[type="email"]:invalid {
 sub,
 sup {
   line-height: 0;
+}
+.flex{
+  display: flex;
+}
+.center{
+  align-items: center;
+  justify-content: space-around;
+}
+.col{
+  flex-direction:column ;
+}
+.row{
+  flex-direction: row;
+}
+.w-full{
+  width: 100%;
+}
+
+.rounded{
+  border-radius: 20px;
+}
+a {
+  font-size: 14px;
+  text-decoration: none;
+  margin: 0 1rem;
+  cursor: pointer;
+  color: #000;
+}
+.pointer{
+  cursor: pointer;
+}
+.glass{
+  background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
