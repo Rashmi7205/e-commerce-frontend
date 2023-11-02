@@ -134,12 +134,12 @@ const Container = styled.div`
     .search-bar{
       width:50%;
       padding:2px 8px;
-      font-size:1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       border-radius: 4px;
       border: none;
+      font-size: 10px;
     }
     input{
       outline: none;
@@ -175,7 +175,7 @@ const Nav = styled.nav`
     }
   }
   @media (max-width:768px) {
-      background-color: #aaa;
+      background-color: #f5f5f5;
   }
 `;
 
@@ -200,7 +200,7 @@ const NavLinks = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    background-color: #aaa;
+    background-color: #fafafa;
     position: absolute;
     top: 70px;
     left: 0;

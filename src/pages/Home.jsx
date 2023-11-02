@@ -11,6 +11,7 @@ import {BsSmartwatch,BsHeadphones} from 'react-icons/bs';
 import {BiSolidJoystick} from 'react-icons/bi';
 import { useDispatch } from 'react-redux';
 import { getProducts } from '../Redux/authSlice';
+import Services from '../Components/Services';
 
 
 function Home() {
@@ -24,7 +25,6 @@ function Home() {
 
   return (
     <Conatainer>
-     <Navbar/>
      <Slider/>
      <ProductList products={products} listTitle={'Flash Sale'} buttonTitle={'View All Products'}/>
      <div className='catagory'>
@@ -52,8 +52,10 @@ function Home() {
          
         </div>
         <button >Browse All Catagories</button>
-     </div>
-    
+     </div> 
+    <div className='services w-full'>
+      <Services/>
+    </div>
     </Conatainer>
   )
 }

@@ -12,10 +12,13 @@ body {
   color: #000;
   font-family: 'Poppins', sans-serif;
 }
+#root{
+ width: 100%; 
+}
 /* sets the body height of the browser, so that backgrounds and div heights work correctly. Color and background will almost certainly be altered; they are just placeholders */
 
 body {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   text-rendering: optimizeLegibility;
 }
 /* sets the base font size for the document; turns on kerning pairs and ligatures */

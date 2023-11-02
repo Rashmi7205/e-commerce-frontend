@@ -22,7 +22,9 @@ export const getProducts = createAsyncThunk('/getproduts',async ()=>{
 const authSlice = createSlice({
     name:"auth",
     initialState,
-    reducers:{},
+    reducers:{
+            
+    },
     extraReducers:(builder)=>{
         builder.addCase(getProducts.fulfilled,(state,action)=>{
             state.products = action.payload; 
