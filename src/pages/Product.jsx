@@ -16,32 +16,58 @@ function Product() {
 
   const [productList,setProductList] = useState(products);
 
+  const categories = ["women's clothing","men's clothing","electronics"];
+
   const [type,setType] = useState({
-    catagory:'',
+    catagory:'all',
     sortIn:'All',
   });
 
   const filterProductByCatagory = ()=>{
-      if(type.catagory){
+      if(type.catagory != 'all'){
         const newProductList= products.filter((product)=>(product.category==(type.catagory)));
         setProductList(newProductList);
+      }
+      else{
+        setProductList(products);
       }
   };
 
 
   const sortProductList = ()=>{
-      if(type.sortIn == 'All'){
-        const newProductList = productList.sort((p1,p2)=>p2.title-p1.title)
-        console.log(newProductList);
-      }
+    
+    if(type.sortIn == 'Chepest')
+    {
+        const newList = [...productList].sort((a,b)=>parseFloat(a.price)-parseFloat(b.price));
+        setProductList(newList);
+    }
+    else
+    if(type.sortIn == 'Expensive'){
+      const newList = [...productList].sort((a,b)=>parseFloat(a.price)-parseFloat(b.price));
+      setProductList(newList.reverse());
+    }
+    else
+    if(type.sortIn == 'Rating'){
+      const newList = [...productList].sort((a,b)=>parseFloat(a.rating.rate)-parseFloat(b.rating.rate));
+      setProductList(newList.reverse());
+      
+    }
+    else
+    if(type.sortIn == 'popular'){
+      const newList = [...productList].sort((a,b)=>parseFloat(a.rating.count)-parseFloat(b.rating.count));
+      setProductList(newList.reverse());
+    }
+    else{
+      return;
+  }
+  
   }
 
 
 
   useEffect(()=>{
-    console.log(type.catagory)
     filterProductByCatagory();
-    
+    sortProductList();
   },[type]);
 
   return (
@@ -52,7 +78,7 @@ function Product() {
       <Card title={'Clothing'} 
     
       >
-            <GiLargeDress   onClick={()=>setType({
+        <GiLargeDress   onClick={()=>setType({
         ...type,
         catagory:"women's clothing"
       })}/>
@@ -69,7 +95,7 @@ function Product() {
         catagory:"men's clothing"
       })}/>
           </Card>
-          <Card title={'Others'}>
+          <Card title={'all'}>
             <BsHeadphones   onClick={()=>setType({
         ...type,
         catagory:"all"
@@ -82,18 +108,36 @@ function Product() {
             <AiOutlineMenu/> <h1>Sort Based on:</h1>
           </div>
           <div className='flex items-center justify-around gap-3 sort' >
-              <span
-              onClick={()=>{
-                setType({
-                  ...type,
-                  sortIn:'All'
-                })
-              }}
+              <span 
+              onClick={()=>setType({
+                ...type,
+                sortIn:'All'
+              })}
               >All</span>
-              <span>New</span>
-              <span>The Most popular</span>
-              <span>Chepest</span>
-              <span>The Most Expensive</span>
+              <span
+              onClick={()=>setType({
+                ...type,
+                sortIn:'Rating'
+              })}
+              >Rating</span>
+              <span 
+              onClick={()=>setType({
+                ...type,
+                sortIn:'popular'
+              })}
+              >The Most popular</span>
+              <span
+              onClick={()=>setType({
+                ...type,
+                sortIn:'Chepest'
+              })} 
+              >Chepest</span>
+              <span 
+              onClick={()=>setType({
+                ...type,
+                sortIn:'Expensive'
+              })}
+              >The Most Expensive</span>
           </div>
    
       </div>
